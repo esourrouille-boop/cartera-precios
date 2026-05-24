@@ -2,8 +2,11 @@ name: Actualizar precios CEDEARs
 
 on:
   schedule:
-    - cron: '0 13,14,15,16,17,18,19,20 * * 1-5'  # cada hora de 10:00 a 17:00 ARG (lun-vie)
-  workflow_dispatch:  # permite correrlo manualmente
+    - cron: '0 13,14,15,16,17,18,19,20 * * 1-5'
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
   contents: write
@@ -12,10 +15,10 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.2.2
 
       - name: Instalar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.6.0
         with:
           python-version: '3.11'
 
