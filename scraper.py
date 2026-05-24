@@ -3,7 +3,7 @@ import re
 from datetime import datetime
 from playwright.sync_api import sync_playwright
 
-TICKERS = ["SPY", "MSFT", "NU", "TSM"]
+TICKERS = ["SPY", "MSFT", "NU", "TSM", "META"]
 
 def extraer_precios(page):
     """
