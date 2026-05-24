@@ -40,7 +40,5 @@ jobs:
             echo "Sin cambios, nada que commitear"
           else
             git commit -m "Actualizar precios $(date -u '+%Y-%m-%d %H:%M UTC')"
-            git fetch origin main
-            git rebase origin/main
-            git push origin main
+            git push --force-with-lease origin main
           fi
